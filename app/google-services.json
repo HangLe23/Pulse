@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "264135878938",
+    "firebase_url": "https://pulse-measurement-402ec-default-rtdb.firebaseio.com",
+    "project_id": "pulse-measurement-402ec",
+    "storage_bucket": "pulse-measurement-402ec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:264135878938:android:ce90a2aea72589486024a3",
+        "android_client_info": {
+          "package_name": "com.example.pulsemeasurement"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "264135878938-lgm35c5ra4lkq3k96fg6l5vphj0bv6rr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdofqE2mSlLdM4GqLazkV28z-IcAWOwcY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "264135878938-lgm35c5ra4lkq3k96fg6l5vphj0bv6rr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
