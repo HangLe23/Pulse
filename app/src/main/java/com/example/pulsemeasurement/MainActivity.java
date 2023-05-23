@@ -15,7 +15,7 @@ import com.google.firebase.database.ValueEventListener;
 public class MainActivity extends AppCompatActivity {
 
     private DatabaseReference dataSensor;
-    private TextView tv_heartRate, tv_SpO2;
+    private TextView tv_heartRate, tv_SpO2, tv_beatState;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,13 +24,20 @@ public class MainActivity extends AppCompatActivity {
         dataSensor = FirebaseDatabase.getInstance().getReference();
         tv_heartRate = (TextView) findViewById(R.id.tv_HeartRateShow);
         tv_SpO2 = (TextView) findViewById(R.id.tv_SpO2Show);
+        //tv_beatState = (TextView)findViewById(R.id.tv_beatstateshow);
         dataSensor.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                double heartRate = snapshot.child("Heart").getValue(Double.class);
-                double SpO2 = snapshot.child("SpO2").getValue(Double.class);
+                int heartRate = snapshot.child("Heart").getValue(Integer.class);
+                int SpO2 = snapshot.child("SpO2").getValue(Integer.class);
+                //double beatstate = snapshot.child("BeatState").getValue(Double.class);
                 tv_heartRate.setText(String.valueOf(heartRate));
-                tv_SpO2.setText(String.valueOf(SpO2));
+                tv_SpO2.setText(String.valueOf(SpO2) + "%");
+                /*if(beatstate == 1){
+                    tv_beatState.setText("Bình Thường");
+                } else if (beatstate == 0){
+                    tv_beatState.setText("Không bình thường");
+                }*/
             }
 
             @Override

@@ -6,45 +6,80 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
-    <Button
-        android:id="@+id/btn_Connect"
-        android:layout_width="200dp"
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Kết Nối"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/title"
+        android:text="Kết quả đo "
+        android:gravity="center"
+        android:textSize="35sp"
+        android:layout_marginTop="25dp"
         android:textStyle="bold"
-        android:textSize="20sp"
-        android:layout_marginBottom="50dp"
-        android:layout_marginLeft="125dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"/>
+        android:textColor="#BB0000"
+        android:textAllCaps="true"/>
     <LinearLayout
         android:id="@+id/layout_heartRate"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_marginTop="50dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:weightSum="2"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/img_background"
         app:layout_constraintLeft_toLeftOf="parent">
-        <TextView
-            android:id="@+id/tv_HeartRate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Nhịp Tim"
-            android:textStyle="bold"
-            android:layout_weight="1"
-            android:textSize="20sp"/>
         <TextView
             android:id="@+id/tv_HeartRateShow"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:text="0"
+            android:textSize="50sp"
+            android:gravity="center"
+            android:textStyle="bold"
             android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/tv_HeartRate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="lần/phút"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:textSize="20sp"/>
 
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layout_state"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/layout_spo2"
+        app:layout_constraintLeft_toLeftOf="parent">
+        <TextView
+            android:id="@+id/tv_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Trạng thái:"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/tv_stateShow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
     <LinearLayout
         android:id="@+id/layout_spo2"
         android:layout_width="match_parent"
@@ -60,7 +95,7 @@
             android:id="@+id/tv_SpO2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nồng Độ SpO2"
+            android:text="Nồng Độ Oxy:"
             android:textStyle="bold"
             android:layout_weight="1"
             android:textSize="20sp"/>
@@ -69,10 +104,18 @@
             android:id="@+id/tv_SpO2Show"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:gravity="center"
             android:textSize="20sp"
-            android:layout_weight="1"
-            />
+            android:layout_weight="1" />
 
-    </LinearLayout>
+    </LinearLayout>    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:layout_marginTop="20dp"
+        android:id="@+id/img_background"
+        android:src="@drawable/heart_beat"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
